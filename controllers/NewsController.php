@@ -17,7 +17,7 @@
 				echo $news->title."<br>";
 				echo $news->description."<br>";
 				echo $news->text."<br>";
-				echo $news->date."<br><br><hr>";
+				echo "<br><hr>";
 			}
 		}
 

@@ -3,7 +3,7 @@
 	class Db{
 		public static function getDb(){
 			$host = "localhost";
-			$dbname = "mvc";
+			$dbname = "gitishop";
 			$user = "root";
 			$pass = "";
 

@@ -8,7 +8,8 @@
 			
 			$dbh = Db::getDB();
 
-			$sth = $dbh->prepare("SELECT id, title, description, text, date FROM news ORDER BY date DESC LIMIT 10 ");
+			$sth = $dbh->prepare("SELECT id, title, description, text FROM news ORDER BY id DESC LIMIT 10 ");
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sth->execute();
 			$result = $sth->fetchall(PDO::FETCH_OBJ);
 
@@ -34,6 +35,7 @@
 			if(!$id)$sql.= " ORDER BY date DESC";
 			
 			$db = DbConnect::getDB();
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$result = $db->query($sql);
 			
 			while($row = $result->fetch(PDO::FETCH_ASSOC)){
